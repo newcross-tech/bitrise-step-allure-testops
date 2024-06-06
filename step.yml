@@ -1,0 +1,37 @@
+title: |-
+  allure-testops
+summary: |
+  Bitrise Step for Allure Testops integration
+description: |
+  Downloads allurectl binary and uses it to upload test results to Allure Testops endpoint
+website: https://github.com/newcross-tech/bitrise-step-allure-testops
+source_code_url: https://github.com/newcross-tech/bitrise-step-allure-testops
+support_url: https://github.com/newcross-tech/bitrise-step-allure-testops/issues
+type_tags:
+  - test
+is_always_run: true
+is_skippable: true
+toolkit:
+  bash:
+    entry_file: step.sh
+inputs:
+  - allurectl_version:
+    opts:
+      title: "Version of allurectl"
+  - os_arch:
+    opts:
+      title: "OS and Architecture"
+      value_options: [darwin_amd64, darwin_arm64, linux_386, linux_amd64, linux_arm64, linux_ppc64, linux_ppc64le]
+  - allure_endpoint:
+    opts:
+      title: "Allure TestOps URI"
+  - allure_token:
+    opts:
+      title: "Allure TestOps API Token"
+  - allure_project_id:
+    opts:
+      title: "Allure Testops Project ID"
+  - allure_results_dir: allure-results
+    opts:
+      title: "Local Allure Results Directory"
+
